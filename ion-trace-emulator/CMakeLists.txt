@@ -1,28 +1,28 @@
 cmake_minimum_required(VERSION 3.16)
 
-add_library(ton-trace-emulator-core STATIC
+add_library(ion-trace-emulator-core STATIC
     src/TraceEmulator.cpp
     src/OverlayListener.cpp
     src/BlockEmulator.cpp
     src/TraceInterfaceDetector.cpp
 )
-target_include_directories(ton-trace-emulator-core
+target_include_directories(ion-trace-emulator-core
     PUBLIC external/ton
     PUBLIC src/
     PUBLIC iondb-scanner/src
 )
-target_link_directories(ton-trace-emulator-core
+target_link_directories(ion-trace-emulator-core
     PUBLIC external/ton
 )
-target_link_libraries(ton-trace-emulator-core iondb-scanner overlay ton_validator emulator)
-target_compile_features(ton-trace-emulator-core PRIVATE cxx_std_17)
+target_link_libraries(ion-trace-emulator-core iondb-scanner overlay ton_validator emulator)
+target_compile_features(ion-trace-emulator-core PRIVATE cxx_std_17)
 
-add_executable(ton-trace-emulator
+add_executable(ion-trace-emulator
     src/main.cpp
     src/TraceScheduler.cpp
     src/TraceInserter.cpp
 )
-target_include_directories(ton-trace-emulator
+target_include_directories(ion-trace-emulator
     PUBLIC external/ton
     PUBLIC src/
     PUBLIC iondb-scanner/src
@@ -31,13 +31,13 @@ target_include_directories(ton-trace-emulator
     PUBLIC ${CMAKE_BINARY_DIR}/external/redis-plus-plus/src
     PUBLIC external/msgpack-c
 )
-target_link_directories(ton-trace-emulator
+target_link_directories(ion-trace-emulator
     PUBLIC external/ton
     PUBLIC external/hiredis
     PUBLIC external/redis-plus-plus
     PUBLIC external/msgpack-c
 )
-target_compile_features(ton-trace-emulator PRIVATE cxx_std_17)
-target_link_libraries(ton-trace-emulator ton_validator ton-trace-emulator-core hiredis redis++ msgpack-cxx)
-target_link_options(ton-trace-emulator PUBLIC -rdynamic)
-install(TARGETS ton-trace-emulator RUNTIME DESTINATION bin)
+target_compile_features(ion-trace-emulator PRIVATE cxx_std_17)
+target_link_libraries(ion-trace-emulator ton_validator ion-trace-emulator-core hiredis redis++ msgpack-cxx)
+target_link_options(ion-trace-emulator PUBLIC -rdynamic)
+install(TARGETS ion-trace-emulator RUNTIME DESTINATION bin)

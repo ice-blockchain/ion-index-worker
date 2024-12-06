@@ -16,7 +16,7 @@ COPY ion-index-postgres-v2/ /app/ion-index-postgres-v2/
 COPY ion-integrity-checker/ /app/ion-integrity-checker/
 COPY ion-smc-scanner/ /app/ion-smc-scanner/
 COPY ion-trace-emulator/ /app/ion-trace-emulator/
-COPY iondb-scanner/ /app/iondb-scanner/
+COPY iondb-scanner/ /app/tondb-scanner/
 COPY CMakeLists.txt /app/
 
 WORKDIR /app/build
@@ -37,6 +37,6 @@ COPY --from=builder /app/build/ion-index-postgres-v2/ion-index-postgres-v2 /usr/
 COPY --from=builder /app/build/ion-index-clickhouse/ion-index-clickhouse /usr/bin/ion-index-clickhouse
 COPY --from=builder /app/build/ion-smc-scanner/ion-smc-scanner /usr/bin/ion-smc-scanner
 COPY --from=builder /app/build/ion-integrity-checker/ion-integrity-checker /usr/bin/ion-integrity-checker
-COPY --from=builder /app/build/ion-trace-emulator/ion-trace-emulator /usr/bin/ion-trace-emulator
+COPY --from=builder /app/build/tion-trace-emulator/ion-trace-emulator /usr/bin/ion-trace-emulator
 
 ENTRYPOINT [ "/entrypoint.sh" ]
