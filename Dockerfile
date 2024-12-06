@@ -16,7 +16,7 @@ COPY ion-index-postgres-v2/ /app/ion-index-postgres-v2/
 COPY ion-integrity-checker/ /app/ion-integrity-checker/
 COPY ion-smc-scanner/ /app/ion-smc-scanner/
 COPY ion-trace-emulator/ /app/ion-trace-emulator/
-COPY iondb-scanner/ /app/tondb-scanner/
+COPY tondb-scanner/ /app/tondb-scanner/
 COPY CMakeLists.txt /app/
 
 WORKDIR /app/build

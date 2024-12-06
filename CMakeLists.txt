@@ -30,7 +30,7 @@ set(MSGPACK_USE_BOOST OFF CACHE BOOL "disable boost" FORCE)
 set(MSGPACK_USE_STD_VARIANT_ADAPTOR ON CACHE BOOL "enable std::variant" FORCE)
 add_subdirectory(external/msgpack-c EXCLUDE_FROM_ALL)
 
-add_subdirectory(iondb-scanner)
+add_subdirectory(tondb-scanner)
 add_subdirectory(ion-index-postgres)
 add_subdirectory(ion-index-postgres-v2)
 add_subdirectory(ion-index-clickhouse)

@@ -8,7 +8,7 @@ add_executable(sandbox-cpp
 
 target_include_directories(sandbox-cpp 
     PUBLIC external/ton
-    PUBLIC iondb-scanner/src
+    PUBLIC tondb-scanner/src
     PUBLIC src/
 )
 
@@ -16,5 +16,5 @@ target_link_directories(sandbox-cpp
     PUBLIC external/ton
 )
 target_compile_features(sandbox-cpp PRIVATE cxx_std_17)
-target_link_libraries(sandbox-cpp iondb-scanner overlay tdutils tdactor adnl tl_api dht ton_crypto
+target_link_libraries(sandbox-cpp tondb-scanner overlay tdutils tdactor adnl tl_api dht ton_crypto
         catchain validatorsession validator-disk ton_validator validator-disk smc-envelope)

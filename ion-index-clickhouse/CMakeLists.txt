@@ -9,7 +9,7 @@ add_executable(ion-index-clickhouse
 target_include_directories(ion-index-clickhouse 
     PUBLIC external/ton
     PUBLIC external/clickhouse-cpp
-    PUBLIC iondb-scanner/src
+    PUBLIC tondb-scanner/src
     PUBLIC src/
 )
 
@@ -18,7 +18,7 @@ target_link_directories(ion-index-clickhouse
     PUBLIC external/clickhouse-cpp
 )
 target_compile_features(ion-index-clickhouse PRIVATE cxx_std_17)
-target_link_libraries(ion-index-clickhouse iondb-scanner overlay tdutils tdactor adnl tl_api dht ton_crypto
+target_link_libraries(ion-index-clickhouse tondb-scanner overlay tdutils tdactor adnl tl_api dht ton_crypto
         catchain validatorsession validator-disk ton_validator validator-disk smc-envelope
         clickhouse-cpp-lib)
 

@@ -9,7 +9,7 @@ add_executable(ion-index-postgres-v2
 target_include_directories(ion-index-postgres-v2
     PUBLIC external/ton
     PUBLIC external/libpqxx
-    PUBLIC iondb-scanner/src
+    PUBLIC tondb-scanner/src
     PUBLIC src/
 )
 
@@ -19,7 +19,7 @@ target_link_directories(ion-index-postgres-v2
 )
 
 target_compile_features(ion-index-postgres-v2 PRIVATE cxx_std_17)
-target_link_libraries(ion-index-postgres-v2 iondb-scanner overlay tdutils tdactor adnl tl_api dht ton_crypto
+target_link_libraries(ion-index-postgres-v2 tondb-scanner overlay tdutils tdactor adnl tl_api dht ton_crypto
         catchain validatorsession validator-disk ton_validator validator-disk smc-envelope pqxx)
 target_link_options(ion-index-postgres-v2 PUBLIC -rdynamic)
 

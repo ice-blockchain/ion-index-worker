@@ -31,4 +31,4 @@ ${TON_WORKER_BINARY:-ion-index-postgres} --host $POSTGRES_HOST_IP \
     --user $POSTGRES_USER \
     --password $POSTGRES_PASSWORD \
     --dbname $POSTGRES_DBNAME \
-    --db ${TON_WORKER_DBROOT:-/iondb} $@
+    --db ${TON_WORKER_DBROOT:-/tondb} $@
