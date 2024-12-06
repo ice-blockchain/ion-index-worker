@@ -13,9 +13,9 @@ COPY sandbox-cpp/ /app/sandbox-cpp/
 COPY ion-index-clickhouse/ /app/ion-index-clickhouse/
 COPY ion-index-postgres/ /app/ion-index-postgres/
 COPY ion-index-postgres-v2/ /app/ion-index-postgres-v2/
-COPY ton-integrity-checker/ /app/ton-integrity-checker/
-COPY ton-smc-scanner/ /app/ton-smc-scanner/
-COPY ton-trace-emulator/ /app/ton-trace-emulator/
+COPY ion-integrity-checker/ /app/ion-integrity-checker/
+COPY ion-smc-scanner/ /app/ion-smc-scanner/
+COPY ion-trace-emulator/ /app/ion-trace-emulator/
 COPY iondb-scanner/ /app/iondb-scanner/
 COPY CMakeLists.txt /app/
 
@@ -35,8 +35,8 @@ COPY --from=builder /app/build/external/libpqxx/src/libpqxx-*.so /usr/lib/
 COPY --from=builder /app/build/ion-index-postgres/ion-index-postgres /usr/bin/ion-index-postgres
 COPY --from=builder /app/build/ion-index-postgres-v2/ion-index-postgres-v2 /usr/bin/ion-index-postgres-v2
 COPY --from=builder /app/build/ion-index-clickhouse/ion-index-clickhouse /usr/bin/ion-index-clickhouse
-COPY --from=builder /app/build/ton-smc-scanner/ton-smc-scanner /usr/bin/ton-smc-scanner
-COPY --from=builder /app/build/ton-integrity-checker/ton-integrity-checker /usr/bin/ton-integrity-checker
-COPY --from=builder /app/build/ton-trace-emulator/ton-trace-emulator /usr/bin/ton-trace-emulator
+COPY --from=builder /app/build/ion-smc-scanner/ion-smc-scanner /usr/bin/ion-smc-scanner
+COPY --from=builder /app/build/ion-integrity-checker/ion-integrity-checker /usr/bin/ion-integrity-checker
+COPY --from=builder /app/build/ion-trace-emulator/ion-trace-emulator /usr/bin/ion-trace-emulator
 
 ENTRYPOINT [ "/entrypoint.sh" ]
