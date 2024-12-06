@@ -10,13 +10,13 @@ RUN apt update -y \
 COPY external/ /app/external/
 COPY pgton/ /app/pgton/
 COPY sandbox-cpp/ /app/sandbox-cpp/
-COPY ton-index-clickhouse/ /app/ton-index-clickhouse/
-COPY ton-index-postgres/ /app/ton-index-postgres/
-COPY ton-index-postgres-v2/ /app/ton-index-postgres-v2/
+COPY ion-index-clickhouse/ /app/ion-index-clickhouse/
+COPY ion-index-postgres/ /app/ion-index-postgres/
+COPY ion-index-postgres-v2/ /app/ion-index-postgres-v2/
 COPY ton-integrity-checker/ /app/ton-integrity-checker/
 COPY ton-smc-scanner/ /app/ton-smc-scanner/
 COPY ton-trace-emulator/ /app/ton-trace-emulator/
-COPY tondb-scanner/ /app/tondb-scanner/
+COPY iondb-scanner/ /app/iondb-scanner/
 COPY CMakeLists.txt /app/
 
 WORKDIR /app/build
@@ -32,9 +32,9 @@ RUN apt update -y \
 COPY scripts/entrypoint.sh /entrypoint.sh
 COPY --from=builder /app/build/external/libpqxx/src/libpqxx.so /usr/lib/libpqxx.so
 COPY --from=builder /app/build/external/libpqxx/src/libpqxx-*.so /usr/lib/
-COPY --from=builder /app/build/ton-index-postgres/ton-index-postgres /usr/bin/ton-index-postgres
-COPY --from=builder /app/build/ton-index-postgres-v2/ton-index-postgres-v2 /usr/bin/ton-index-postgres-v2
-COPY --from=builder /app/build/ton-index-clickhouse/ton-index-clickhouse /usr/bin/ton-index-clickhouse
+COPY --from=builder /app/build/ion-index-postgres/ion-index-postgres /usr/bin/ion-index-postgres
+COPY --from=builder /app/build/ion-index-postgres-v2/ion-index-postgres-v2 /usr/bin/ion-index-postgres-v2
+COPY --from=builder /app/build/ion-index-clickhouse/ion-index-clickhouse /usr/bin/ion-index-clickhouse
 COPY --from=builder /app/build/ton-smc-scanner/ton-smc-scanner /usr/bin/ton-smc-scanner
 COPY --from=builder /app/build/ton-integrity-checker/ton-integrity-checker /usr/bin/ton-integrity-checker
 COPY --from=builder /app/build/ton-trace-emulator/ton-trace-emulator /usr/bin/ton-trace-emulator

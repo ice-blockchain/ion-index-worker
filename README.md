@@ -1,10 +1,10 @@
 # TON Index (C++ Worker)
 
-This is a C++ worker for [TON indexer](https://github.com/toncenter/ton-indexer/). This worker reads data from TON node files, parses TL-B schemas, and inserts data into PostgreSQL database.
+This is a C++ worker for [TON indexer](https://github.com/toncenter/ion-indexer/). This worker reads data from TON node files, parses TL-B schemas, and inserts data into PostgreSQL database.
 
 ## 1. How to install
 
-Before installing the worker, ensure the TON Index database is set up using the [instructions provided](https://github.com/toncenter/ton-indexer/tree/master).
+Before installing the worker, ensure the TON Index database is set up using the [instructions provided](https://github.com/toncenter/ion-indexer/tree/master).
 
 
 ### 1.1. Setup as systemd daemon
@@ -32,7 +32,7 @@ Do the following steps to build and run index worker from source.
         mkdir -p build
         cd build
         cmake -DCMAKE_BUILD_TYPE=Release -GNinja ..
-        ninja -j$(nproc) ton-index-postgres-v2
+        ninja -j$(nproc) ion-index-postgres-v2
 
 3. Install binary to your system:
 
@@ -44,7 +44,7 @@ Do the following steps to build and run index worker from source.
 
 5. Run TON index worker:
 
-        ton-index-postgres-v2 <args>
+        ion-index-postgres-v2 <args>
 
 ### 1.3. Available arguments:
 * `--db <path>` - path to TON node directory. Pass `/var/ton-work/db`, if you have TON node installed by mytonctrl. **Required**.

@@ -9,12 +9,12 @@ add_library(ton-trace-emulator-core STATIC
 target_include_directories(ton-trace-emulator-core
     PUBLIC external/ton
     PUBLIC src/
-    PUBLIC tondb-scanner/src
+    PUBLIC iondb-scanner/src
 )
 target_link_directories(ton-trace-emulator-core
     PUBLIC external/ton
 )
-target_link_libraries(ton-trace-emulator-core tondb-scanner overlay ton_validator emulator)
+target_link_libraries(ton-trace-emulator-core iondb-scanner overlay ton_validator emulator)
 target_compile_features(ton-trace-emulator-core PRIVATE cxx_std_17)
 
 add_executable(ton-trace-emulator
@@ -25,7 +25,7 @@ add_executable(ton-trace-emulator
 target_include_directories(ton-trace-emulator
     PUBLIC external/ton
     PUBLIC src/
-    PUBLIC tondb-scanner/src
+    PUBLIC iondb-scanner/src
     PUBLIC external/hiredis
     PUBLIC external/redis-plus-plus/src
     PUBLIC ${CMAKE_BINARY_DIR}/external/redis-plus-plus/src

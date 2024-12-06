@@ -226,8 +226,8 @@ sandbox/
 .vscode/
 
 
-tondb-scanner/src/tokens.cpp
-tondb-scanner/src/tokens.h
+iondb-scanner/src/tokens.cpp
+iondb-scanner/src/tokens.h
 
-ton-index-worker/src/tokens.cpp
-ton-index-worker/src/tokens.h
+ion-index-worker/src/tokens.cpp
+ion-index-worker/src/tokens.h

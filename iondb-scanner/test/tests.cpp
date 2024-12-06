@@ -14,7 +14,7 @@
 
 
 
-// TEST(TonDbScanner, JettonWalletDetector) {
+// TEST(iondbScanner, JettonWalletDetector) {
 //   td::actor::Scheduler scheduler({1});
 //   auto watcher = td::create_shared_destructor([] { td::actor::SchedulerContext::get()->stop(); });
 

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-add_library(tondb-scanner STATIC
+add_library(iondb-scanner STATIC
     src/InsertManager.cpp
     src/InsertManagerBase.cpp
     src/DbScanner.cpp
@@ -16,18 +16,18 @@ add_library(tondb-scanner STATIC
     src/smc-interfaces/NftSale.cpp
 )
 
-target_include_directories(tondb-scanner 
+target_include_directories(iondb-scanner 
     PUBLIC external/ton
     PUBLIC external/libpqxx
     PUBLIC src/
 )
 
-target_link_directories(tondb-scanner
+target_link_directories(iondb-scanner
     PUBLIC external/ton
     PUBLIC external/libpqxx
 )
-target_compile_features(tondb-scanner PRIVATE cxx_std_17)
-target_link_libraries(tondb-scanner overlay tdutils tdactor adnl tl_api dht
+target_compile_features(iondb-scanner PRIVATE cxx_std_17)
+target_link_libraries(iondb-scanner overlay tdutils tdactor adnl tl_api dht
         catchain validatorsession validator-disk ton_validator validator-disk smc-envelope
         pqxx)
 
@@ -45,4 +45,4 @@ add_custom_command(
 )
 
 add_custom_target(tlb_generate_tokens DEPENDS ${TLB_TOKENS})
-add_dependencies(tondb-scanner tlb_generate_tokens)
+add_dependencies(iondb-scanner tlb_generate_tokens)
