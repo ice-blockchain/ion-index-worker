@@ -37,6 +37,6 @@ COPY --from=builder /app/build/ion-index-postgres-v2/ion-index-postgres-v2 /usr/
 COPY --from=builder /app/build/ion-index-clickhouse/ion-index-clickhouse /usr/bin/ion-index-clickhouse
 COPY --from=builder /app/build/ion-smc-scanner/ion-smc-scanner /usr/bin/ion-smc-scanner
 COPY --from=builder /app/build/ion-integrity-checker/ion-integrity-checker /usr/bin/ion-integrity-checker
-COPY --from=builder /app/build/tion-trace-emulator/ion-trace-emulator /usr/bin/ion-trace-emulator
+COPY --from=builder /app/build/ion-trace-emulator/ion-trace-emulator /usr/bin/ion-trace-emulator
 
 ENTRYPOINT [ "/entrypoint.sh" ]
