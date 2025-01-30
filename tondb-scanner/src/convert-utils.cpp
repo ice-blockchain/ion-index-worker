@@ -79,7 +79,7 @@ td::Result<td::int64> convert::to_balance(vm::CellSlice& balance_slice) {
       // ice-hermes, statement for the unfortunate souls: I have no idea why this is happening,
       // this was done to fix the bug where the indexing new blocks stopped.
       // Don't trust this fix, it's a hack. 30.01.2025
-      return td::Status::Error("Failed to unpack balance (2) ");
+      //return td::Status::Error("Failed to unpack balance (2) ");
   }
   return res;
 }
