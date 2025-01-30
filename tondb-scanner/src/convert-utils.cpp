@@ -75,7 +75,7 @@ td::Result<td::int64> convert::to_balance(vm::CellSlice& balance_slice) {
   }
   auto res = balance->to_long();
   if (res == td::int64(~0ULL << 63)) {
-      // res = 0;
+      res = td::int64(0ULL);
       // ice-hermes, statement for the unfortunate souls: I have no idea why this is happening,
       // this was done to fix the bug where the indexing new blocks stopped.
       // Don't trust this fix, it's a hack. 30.01.2025
